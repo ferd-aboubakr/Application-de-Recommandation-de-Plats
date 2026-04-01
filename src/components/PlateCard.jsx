@@ -1,10 +1,11 @@
-export default function PlateCard({props})
-{
-    return (<div>
-<h2>{props.name}</h2>
-<h2>{props.price}</h2>
-<p>{props.description}</p>
-</div>
-{? <span className="text-green-600">Disponible</span> : <span className="text-green-600">Indisponible</span>}
-    );
-}
+
+
+export default function PlateCard({props}) {
+ return (
+ <div className="border rounded p-4 bg-black">
+ <h2>{props.name}</h2>
+ <p>{props.price} MAD</p>
+ <p>{props.description}</p>
+ {props.is_available && <span className="text-green-600">Disponible</span>}
+ </div>
+ );}

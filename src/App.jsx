@@ -7,18 +7,26 @@ import PlateCard from './components/PlateCard'
 
 function App() {
 
-  const arr = [ {id : 1 ,name : "test",  price : 7 , description : "this is a yummy plate"},
-  {id : 1 ,name : "test",  price : 7 , description : "this is a yummy plate"},
-  {id : 1 ,name : "test",  price : 7 , description : "this is a yummy plate"}
+  const plates = [ {id : 1 ,name : 'test1',  price : 7 , description : 'this is a yummy plate'},
+  {id : 2 ,name : 'test2',  price : 17 , description : 'this is a yummy platee'},
+  {id : 3 ,name : 'test3',  price : 27 , description : 'this is a yummy plateee'}
   ];
 
-for i 
 
-  return <div>
+  return (
+  <>
+  <div>
     <h1>My Cards</h1>
-    
+
+    <div className='grid grid-cols-5'>{plates.map((plate) =>(
+      <PlateCard  key={plate.id} props={plate}/>
+    ))}</div>
 
   </div>
+</>
+  )
+
+
 }
  
 export default App
