@@ -1,28 +1,44 @@
 import { useState } from 'react'
+import ReactDOM from 'react-dom/client'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import PlateCard from './components/PlateCard' 
+import Plates from './pages/Plates'
+import Home from './pages/Home'
+import { BrowserRouter  as Router, Link , Routes , Route} from 'react-router-dom'
 
 function App() {
 
-  const plates = [ {id : 1 ,name : 'test1',  price : 7 , description : 'this is a yummy plate', is_available : true},
-  {id : 2 ,name : 'test2',  price : 17 , description : 'this is a yummy platee', is_available : false},
-  {id : 3 ,name : 'test3',  price : 27 , description : 'this is a yummy plateee', is_available : true}
-  ];
+ 
 
 
   return (
   <>
-  <div>
-    <h1>My Cards</h1>
+  
 
-    <div className='grid grid-cols-5'>{plates.map((plate) =>(
-      <PlateCard  key={plate.id} props={plate}/>
-    ))}</div>
 
-  </div>
+     <nav>
+        <Link to="/">Home</Link>
+        <Link to="/Plates">Plates</Link>
+        <Link to="/Login">Login</Link>
+        <Link to="/PlateDetail">Details des plats</Link>
+        <Link to="/Profile">Profile</Link>
+        <Link to="/Register">Register</Link>
+      </nav>
+
+      <main>
+        <Routes>
+        <Route path ="/" element={<Home/>}/>
+         <Route path ="/Plates"  element={<Plates/>}/>
+         <Route path="/Profile" element={<Plates/>} />
+         <Route path="/PlateDetail" element={<Plates/>} />
+         <Route path="/Register" element={<Plates/>} />
+         </Routes>
+      </main>
+    
+
 </>
   )
 
